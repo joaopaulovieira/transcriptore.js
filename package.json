@@ -57,7 +57,9 @@
   },
   "jest": {
     "verbose": true,
-    "setupFiles": ["./jest_global_setup.js"],
+    "setupFiles": [
+      "./jest_global_setup.js"
+    ],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
