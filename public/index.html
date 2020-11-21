@@ -28,6 +28,10 @@
 
       // fetch and parse one local files
       transcriptore.fetchAndParse('./samples/lorem_ipsum.txt').then(text => appendOnBody('lorem_ipsum.txt', text))
+
+      // fetch and parse external files
+      transcriptore.fetchAndParse('https://gist.githubusercontent.com/joaopaulovieira/87f92a1fd3139ed1c811aad0dfcfc011/raw/5ff2e2cee4f54a824f9d8a57a558d14d27d60aec/dash_sample.mpd')
+        .then(text => appendOnBody('dash_sample.mpd', text))
     </script>
   </body>
 </html>
