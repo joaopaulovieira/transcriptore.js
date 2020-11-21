@@ -36,7 +36,7 @@
     "start": "npm run build && sirv public/ --host 0.0.0.0 --port 8080 ",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "test": "jest --passWithNoTests",
+    "test": "jest --coverage",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
     "test:coverage": "open coverage/lcov-report/index.html"
   },
@@ -57,6 +57,7 @@
   },
   "jest": {
     "verbose": true,
+    "setupFiles": ["./jest_global_setup.js"],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
