@@ -15,11 +15,21 @@ describe('Transcriptore', () => {
     })
   })
 
-  test('fetchAndParse method fetches one external file and returns a parsed text from response.body stream', done => {
-    new Transcriptore().fetchAndParse(TEST_FILE_URL).then(text => {
-      const comparison = text.indexOf('<?xml version=\"1.0\" encoding=\"utf-8\"?>') !== -1
-      expect(comparison).toBeTruthy()
-      done()
+  describe('fetchAndParse method ', () => {
+    test('fetches one external file and returns a parsed text from response.body stream', done => {
+      new Transcriptore().fetchAndParse(TEST_FILE_URL).then(text => {
+        const comparison = text.indexOf('<?xml version=\"1.0\" encoding=\"utf-8\"?>') !== -1
+        expect(comparison).toBeTruthy()
+        done()
+      })
+    })
+
+    test('forwards fetch options to the fetch module', done => {
+      jest.spyOn(global, 'fetch')
+      new Transcriptore().fetchAndParse(TEST_FILE_URL, { foo: 'bar' }).then(() => {
+        expect(global.fetch).toHaveBeenCalledWith(TEST_FILE_URL, { foo: 'bar' })
+        done()
+      })
     })
   })
 })
