@@ -1,3 +1,12 @@
+[![](https://data.jsdelivr.com/v1/package/npm/transcriptore.js/badge)](https://www.jsdelivr.com/package/npm/transcriptore.js)
+[![](https://img.shields.io/npm/v/transcriptore.js.svg?style=flat-square)](https://npmjs.org/package/transcriptore.js)
+[![](https://img.shields.io/npm/dt/transcriptore.js.svg?style=flat-square)](https://npmjs.org/package/transcriptore.js)
+![](https://badgen.net/badgesize/normal/https/unpkg.com/transcriptore.js/dist/transcriptore.modern.mjs?&style=flat-square&label=size%20(ESM))
+![](https://badgen.net/badgesize/normal/https/unpkg.com/transcriptore.js/dist/transcriptore.umd.js?&style=flat-square&label=size%20(UMD))
+![Coveralls github](https://img.shields.io/coveralls/github/joaopaulovieira/transcriptore.js?style=flat-square)
+![Travis (.com)](https://img.shields.io/travis/com/joaopaulovieira/transcriptore.js?style=flat-square)
+[![](https://img.shields.io/github/license/joaopaulovieira/transcriptore.js?style=flat-square)](https://github.com/joaopaulovieira/transcriptore.js/blob/master/LICENSE)
+
 <div align=center><img src="./public/transcriptore-ico.png" width="500px"></div>
 <div align=center><p style="color: black; font-size: 50px">Transcriptore.js</p></div>
 
