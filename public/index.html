@@ -10,6 +10,22 @@
     <script type="module">
       import Transcriptore from './dist/transcriptore.modern.mjs'
       const transcriptore = new Transcriptore()
+
+      const appendOnBody = (name, text) => {
+        const title = document.createElement('p')
+        const content = document.createElement('p')
+        title.textContent = `${name}\n\n`
+        content.textContent = `${text}\n\n`
+        document.body.appendChild(title)
+        document.body.appendChild(content)
+      }
+
+      // parse a fetch response
+      fetch('./samples/hls_sample.m3u8').then(response => {
+       const fetchReader = response.body.getReader()
+       fetchReader.read().then(buffer => appendOnBody('hls_sample.m3u8', transcriptore.readBuffer(buffer)))
+      })
+
     </script>
   </body>
 </html>
