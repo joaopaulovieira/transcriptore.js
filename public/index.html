@@ -26,6 +26,8 @@
        fetchReader.read().then(buffer => appendOnBody('hls_sample.m3u8', transcriptore.readBuffer(buffer)))
       })
 
+      // fetch and parse one local files
+      transcriptore.fetchAndParse('./samples/lorem_ipsum.txt').then(text => appendOnBody('lorem_ipsum.txt', text))
     </script>
   </body>
 </html>
