@@ -1,4 +1,4 @@
-import Transcriptore from './dist/transcriptore.mjs'
+import Transcriptore from './dist/transcriptore.modern.mjs'
 import fetch from 'node-fetch'
 
 global.fetch = fetch
