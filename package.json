@@ -31,7 +31,7 @@
     "url": "git@github.com:joaopaulovieira/transcriptore.git"
   },
   "scripts": {
-    "build": "microbundle --format modern,umd --name Transcriptore --no-compress && npm run update-public",
+    "build": "microbundle --format modern,umd,cjs --name Transcriptore --no-compress && npm run update-public",
     "update-public": "cp -a dist/.  public/dist/",
     "start": "npm run build && sirv public/ --host 0.0.0.0 --port 8080 ",
     "lint": "eslint src",
