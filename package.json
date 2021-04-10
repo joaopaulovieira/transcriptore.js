@@ -22,16 +22,17 @@
     "/dist",
     "/src"
   ],
-  "source": "src/transcriptore.js",
-  "main": "dist/transcriptore.js",
-  "esmodule": "dist/transcriptore.modern.mjs",
-  "unpkg": "dist/transcriptore.umd.js",
+  "source": "./src/transcriptore.js",
+  "main": "./dist/transcriptore.js",
+  "umd:main": "./dist/transcriptore.umd.js",
+  "module": "./dist/transcriptore.esm.js",
+  "exports": "./dist/transcriptore.modern.mjs",
   "repository": {
     "type": "git",
     "url": "git@github.com:joaopaulovieira/transcriptore.git"
   },
   "scripts": {
-    "build": "microbundle --format modern,umd,cjs --name Transcriptore --no-compress && npm run update-public",
+    "build": "microbundle --format esm,modern,umd,cjs --name Transcriptore --no-compress && npm run update-public",
     "update-public": "cp -a dist/.  public/dist/",
     "start": "npm run build && sirv public/ --host 0.0.0.0 --port 8080 ",
     "lint": "eslint src",
@@ -53,7 +54,7 @@
     "text-encoding": "^0.7.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=12.0.0"
   },
   "publishConfig": {
     "access": "public"
