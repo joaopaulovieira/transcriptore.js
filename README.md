@@ -16,7 +16,10 @@ This is our file example(`lorem_ipsum.txt`):
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ```
 
-Now, we just need to read this file via one [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) and pass the promise returned from the read method of the ReadableStream and call the `readBuffer` method of our `Transcriptore` instance to get the parsed text.
+Now, we just need to:
+* Read this file through a [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream);
+* Pass the [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) returned from the read method of the `ReadableStream`;
+* Call the `readBuffer` method of our `Transcriptore` instance to get the parsed text.
 
 For the sake of practicality, we can use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API):
 
@@ -33,7 +36,7 @@ fetch('https://example.com/path/lorem_ipsum.txt').then(reponse => {
 // output: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ```
 
-`Transcriptore.js` also have the `fetchAndParse` method to just pass one URL and receives the parsed file text:
+`Transcriptore.js` also have the `fetchAndParse` method to pass a URL and receives the parsed text file:
 
 ```javascript
 import Transcriptore from 'transcriptore.js'
@@ -45,7 +48,7 @@ parser.fetchAndParse('https://example.com/path/lorem_ipsum.txt', { mode: 'cors' 
 // output: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ```
 
-`Transcriptore.js` also work via Node.js:
+`Transcriptore.js` also work with Node.js:
 
 ```javascript
 // parse_lorem_ipsum.js
